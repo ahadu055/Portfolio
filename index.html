@@ -11,6 +11,7 @@
 </head>
 <body>
     <header>
+        <canvas id="logo" width="120" height="120">Edilawit's Logo</canvas>
         
     
     <h1>Hello, I am Edilawit Legesse. <br> Welcome to My Portfolio</h1>
@@ -112,15 +113,15 @@ allowfullscreen>
 <p>
     <label for="lvl-css">CSS</label>
     <meter id="lvl-css"
-    value="0.6" min="0" max="1">60%</meter>
+    value="0.7" min="0" max="1">70%</meter>
 </p>
 <p>
     <label for="lvl-javaScript">JavaScript</label>
     <meter id="lvl-javaScript"
-    value="0.7" min="0" max="1" low="0.3" high="0.7"
-    optimum="1">70%</meter>
+    value="0.2" min="0" max="1" low="0.3" high="0.7"
+    optimum="1">20%</meter>
 </p>
-    
+<canvas id="skillChart" width="300" height="150"></canvas>
    <h3>My Learning Roadmap</h3>
 <ol type="i">
      <li>HTML structure and content</li>
@@ -277,7 +278,7 @@ int main() {
         <area shape="rect" coords="420,40,580,160" href="mailto:edlawitlegesse@gmail.com" alt="Email">
     </map>
     <h3>Where I study</h3>
-<iframe src="https://maps.app.goo.gl/g7p18LAbVogF5pETA" frameborder="0" 
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28416.099655416503!2d38.81164175355837!3d8.886199287388347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b82a7e392203f%3A0xb05f440eacc98f9f!2sAddis%20Ababa%20Science%20and%20Technology%20University!5e0!3m2!1sen!2set!4v1793644404427!5m2!1sen!2set" frameborder="0" 
 width="600"
 height="300"
 title="Map of my university campus">
@@ -361,5 +362,60 @@ pattern="0[79][0-9]{8}" title="10 digits starting with 09 or 07">
         <p>&copy; 2026 Edilawit Legesse. All rights reserved.</p>
         <p>Last updated: <time datetime="2026-11-4">November 4, 2026</time></p>
     </footer>
+
+    <script>
+const canvas = document.getElementById('logo');
+const ctx = canvas.getContext('2d');
+
+ctx.fillStyle = "#1f5fa8";
+ctx.fillRect(0, 0, 120, 120);
+
+ctx.beginPath();
+ctx.arc(60, 60, 45, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
+
+ctx.fillStyle = "#1f5fa8";
+ctx.font = "bold 36px Arial";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+ctx.fillText("EL", 60, 62);
+</script>
+
+
+
+<script>
+window.onload = function() {
+
+    const canvas = document.getElementById("skillChart");
+    const ctx = canvas.getContext("2d");
+
+    const skills = [
+        { name: "HTML", value: 80 },
+        { name: "Python", value: 70 },
+        { name: "JavaScript", value: 20 }
+    ];
+
+    const positions = [30, 120, 210];
+    const barWidth = 40;
+    const maxHeight = 120;
+
+    for (let i = 0; i < skills.length; i++) {
+
+        let height = (skills[i].value / 100) * maxHeight;
+        let y = 130 - height;
+
+        ctx.fillStyle = "#1f5fa8";
+        ctx.fillRect(positions[i], y, barWidth, height);
+
+        ctx.fillStyle = "black";
+        ctx.font = "12px Arial";
+        ctx.textAlign = "center";
+
+        ctx.fillText(skills[i].name, positions[i] + 20, 145);
+    }
+};
+</script>
+
 </body>
 </html>
