@@ -11,9 +11,20 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        
     
-    <h1>Hello, I am Edilawit Legesse</h1>
+    <h1>Hello, I am Edilawit Legesse. <br> Welcome to My Portfolio</h1>
+    <button type="button"
+    onclick="document.getElementById('hireDialog').showModal()">Hire Me</button>
+    <dialog id="hireDialog">
+<h2>Available for internships</h2>
+<p>I am available for internships and freelance web projects.</p>
+<p><a href="#contact">Send me a message</a> or <a href="files/cv.pdf"
+download>download my CV</a>.</p>
+<button type="button"
+onclick="document.getElementById('hireDialog').close()">Close</button>
+</dialog>
+
     <img src="images/profile.jpg" alt="Photo Of Me" title="Edilawit Legesse" width="200" height="200">
     <p>This is my portfolio website</p>
     
@@ -242,6 +253,12 @@ int main() {
         <area shape="circle" coords="300,100,70" href="https://www.linkedin.com/in/edilawit-legesse-902325261" alt="LinkedIn">
         <area shape="rect" coords="420,40,580,160" href="mailto:edlawitlegesse@gmail.com" alt="Email">
     </map>
+    <h3>Where I study</h3>
+<iframe src="https://maps.app.goo.gl/g7p18LAbVogF5pETA" frameborder="0" 
+width="600"
+height="300"
+title="Map of my university campus">
+</iframe>
 <h3>Send me a message</h3>
 <form action="thank-you.html" method="post" enctype="multipart/form-data">
 <fieldset>
@@ -311,12 +328,7 @@ pattern="0[79][0-9]{8}" title="10 digits starting with 09 or 07">
 <button type="reset">Reset</button>
 </form>
 
-<h3>Where I study</h3>
-<iframe src="https://maps.app.goo.gl/g7p18LAbVogF5pETA" frameborder="0" 
-width="600"
-height="300"
-title="Map of my university campus">
-</iframe>
+
 
 </section>
 
